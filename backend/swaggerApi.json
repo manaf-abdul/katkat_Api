@@ -1,0 +1,160 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "Netflix",
+        "description": "Netflix API in NodeJs using Swagger",
+        "contact": {
+            "email": "abdulmanafp1966@gmail.com"
+        },
+        "license": {
+            "url": "https://manaf-abdul.github.io/manafabdul/"
+        }
+    },
+    "servers": [
+        {
+            "url": "http://localhost:5001",
+            "description": "Development Environment"
+        },
+        {
+            "url": "https://ic38.herokuapp.com",
+            "description": "Live Environment"
+        }
+    ],
+    "tags": [
+        {
+            "name": "User",
+            "description": ""
+        }
+    ],
+    "paths": {
+        "/api/movie/create": {
+            "post": {
+                "tags": [
+                    "Movies"
+                ],
+                "summary": "ADDS A NEW MOVIE",
+                "produces": "application/json",
+                "consumes": "multipart/form-data",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "title": {
+                                        "type": "string",
+                                        "example": "my Course"
+                                    },
+                                    "description": {
+                                        "type": "string",
+                                        "example": "this a course about MERN stack"
+                                    },
+                                    "release_date": {
+                                        "type": "string",
+                                        "example": "fgsdfgsdf"
+                                    },
+                                    "status": {
+                                        "type": "string",
+                                        "example": "dsfgdsfg"
+                                    },
+                                    "rating": {
+                                        "type": "number",
+                                        "example": 3
+                                    },
+                                    "language": {
+                                        "type": "string",
+                                        "example": "English"
+                                    },
+                                    "duration": {
+                                        "type": "string",
+                                        "example": "2 hours 30 min"
+                                    },
+                                    "isSeries": {
+                                        "type": "boolean",
+                                        "example": false
+                                    },
+                                    "director": {
+                                        "type": "string",
+                                        "example": "K.K.Rajeev"
+                                    },
+                                    "posterImage": {
+                                        "type": "file"
+                                    },
+                                    "video": {
+                                        "type": "file"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Verified SuccessFully"
+                    },
+                    "401": {
+                        "description": "Unauthorized access to API"
+                    }
+                }
+            }
+        },
+        "/api/movie/createSeason": {
+            "post": {
+                "tags": [
+                    "Movies"
+                ],
+                "summary": "ADDS A NEW SEASON",
+                "produces": "application/json",
+                "consumes": "multipart/form-data",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "id": {
+                                        "type": "string",
+                                        "example": "63777de59c4a30d6d5d93443"
+                                    },
+                                    "title": {
+                                        "type": "string",
+                                        "example": "my Course"
+                                    },
+                                    "description": {
+                                        "type": "string",
+                                        "example": "this a course about MERN stack"
+                                    },
+                                    "duration": {
+                                        "type": "string",
+                                        "example": "2 hours 30 min"
+                                    },
+                                    "image": {
+                                        "type": "file"
+                                    },
+                                    "video": {
+                                        "type": "file"
+                                    },
+                                    "free_preview": {
+                                        "type": "boolean",
+                                        "example": false
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Verified SuccessFully"
+                    },
+                    "401": {
+                        "description": "Unauthorized access to API"
+                    }
+                }
+            }
+        }
+    }
+}
