@@ -26,6 +26,16 @@ app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(swaggerJSDocs));
 app.use('/api/user', UserRoutes)
 app.use('/api/movie', MovieRoutes)
 
+app.get("/test", async (req, res) => {
+    try {
+        let data = {"Test":"API RUNNING...zzzzz"};
+        return res.json(data);
+    } catch (e) {
+        //console.log(e)
+        return res.json(e.message);
+    }
+});
+
 app.use((req, res, next) => {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
