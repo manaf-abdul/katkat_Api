@@ -6,6 +6,7 @@ import swaggerUI from "swagger-ui-express";
 import connectDB from './Config/DB.js'
 import UserRoutes from './Routes/User.Routes.js'
 import MovieRoutes from './Routes/Movie.Routes.js'
+import PaymentRoutes from './Routes/Payment.Routes.js'
 
 
 import { createRequire } from "module";
@@ -25,6 +26,7 @@ app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(swaggerJSDocs));
 
 app.use('/api/user', UserRoutes)
 app.use('/api/movie', MovieRoutes)
+app.use('/api/payment', PaymentRoutes)
 
 app.get("/test", async (req, res) => {
     try {

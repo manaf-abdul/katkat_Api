@@ -18,6 +18,14 @@ const userModel = new mongoose.Schema(
             type: String,
             default:null
         },
+        isSubscribed: {
+            type: Boolean,
+            default:false
+        },
+        plan: {
+            type: Number,
+            default:0
+        },
     },{
         timestamps:true
     }
