@@ -55,3 +55,13 @@ export const getMovieById = async (req, res) => {
         return res.status(200).json({ errorcode: 5, status: false, msg: e, data: e });
     }
 };
+
+export const getMovies = async (req, res) => {
+    try {
+        let movie = await Movie.find()
+        console.log("movir0",movie);
+        return res.status(200).json({ errorcode: 0, status: false, msg: "Fetched Successfully", data: movie })
+    } catch (e) {
+        return res.status(200).json({ errorcode: 5, status: false, msg: e, data: e });
+    }
+};
